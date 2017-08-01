@@ -1,4 +1,18 @@
-<h1>Pokedex</h1>
-<ul *ngIf="results.length">
-  <li *ngFor="let pokemon of results">{{pokemon.name}}</li>
-</ul>
+<h1>{{title}}</h1>
+<div>
+  <input  placeholder="Recherche">
+</div>
+<div class="pokedex">
+  <div class="voir" *ngIf="selectedPkm">
+      <h2>{{selectedPkm.name}} details!</h2>
+      <div><label>id: </label>{{selectedHero.name}}</div>
+    </div>
+  <div class="pokedex-pokemon" *ngFor="let pokemon of results" [class.selected]="pokemon === selectedPkm"
+  (click)="onSelect(pokemon)">
+    <div class="pokedex-pokemon-id">
+      {{pokemon.name}}
+    </div>
+    <a href="{{pokemon.url}}">+ Détails</a>
+  </div>
+</div>
+
