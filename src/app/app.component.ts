@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 export class Pokemon {
   id: number;
   name: string;
+  url: string;
 }
 
 @Component({
@@ -16,10 +17,15 @@ export class Pokemon {
 export class AppComponent implements OnInit {
   title = 'Pokedex';
 
+  results2 = [];
+
   selectedPkm: Pokemon;
 
   onSelect(pokemon: Pokemon): void {
     this.selectedPkm = pokemon;
+    this.http.get(pokemon.url).subscribe(data => {
+      this.results2 = data['results2'];
+    });
   }
 
   results = [];

@@ -5,14 +5,20 @@
 <div class="pokedex">
   <div class="voir" *ngIf="selectedPkm">
       <h2>{{selectedPkm.name}} details!</h2>
-      <div><label>id: </label>{{selectedHero.name}}</div>
+      <div><label>id: </label>{{selectedPkm.name}}</div>
+      <div class="pokedex" *ngFor="let p of results2" >
+        <div class="pokemon">
+          {{p.forms}}
+        </div>
+      </div>
+      <a href="{{selectedPkm.url}}">Test</a>
     </div>
-  <div class="pokedex-pokemon" *ngFor="let pokemon of results" [class.selected]="pokemon === selectedPkm"
+  <div class="pokedex" *ngFor="let pokemon of results" [class.selected]="pokemon === selectedPkm"
   (click)="onSelect(pokemon)">
-    <div class="pokedex-pokemon-id">
+    <div class="pokemon">
       {{pokemon.name}}
     </div>
-    <a href="{{pokemon.url}}">+ Détails</a>
+    <!--<a href="{{pokemon.url}}">+ Détails</a>-->
   </div>
 </div>
 
