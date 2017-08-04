@@ -15,12 +15,13 @@
   </div> -->
 
   <ul uk-accordion>
-    <li class="uk-open pokedex col-md-4" *ngFor="let pokemon of results" [class.selected]="pokemon === selectedPkm"
+    <li class="uk-open pokedex col-md-4" *ngFor="let pokemon of results"  [class.selected]="pokemon === selectedPkm"
   (click)="onSelect(pokemon)">
         <h3 class="uk-accordion-title">{{pokemon.name}}</h3>
         <div class="uk-accordion-content">
             <p>{{pokemon.name}}</p>
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.id}}.png" />
+            <p>{{selectedPkm.name}}</p>
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" />
         </div>
     </li>
   </ul>
