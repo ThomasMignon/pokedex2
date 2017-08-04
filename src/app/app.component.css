@@ -1,15 +1,17 @@
 .voir{
-	background-color: red;
+	border: 2px solid black;
+  border-radius:15%;
 	width: 50vh;
 	height: 200px;
 	float: right;
+  padding:2%;
 }
 
 .pokemon {
   background-color: rgb(255, 255, 255);
   width:20vh;
   text-align: center;
-  position: flex;
+  
   font-size: 1.5em;
   margin: 10px;
   padding: 10px;
