@@ -37,5 +37,6 @@ export class AppComponent implements OnInit {
     this.http.get('http://pokeapi.co/api/v2/pokemon/?limit=151&offset=0').subscribe(data => {
       this.results = data['results'];
     });
+    this.onSelect(this.selectedPkm);
   }
 }

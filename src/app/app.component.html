@@ -1,22 +1,28 @@
 <h1>{{title}}</h1>
 <div class="pokedex">
-  <div class="voir" *ngIf="selectedPkm">
+  <!-- <div class="voir" *ngIf="selectedPkm">
       <h2>{{selectedPkm.name}} details!</h2>
-      <div><label>id: </label>{{selectedPkm.name}}</div>
-      <div class="pokedex" *ngFor="let p of results2" >
-        <div class="pokemon">
-          {{p.forms}}
-        </div>
-      </div>
+      <div><label>#Id: </label>{{selectedPkm.id}}</div>
       <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{selectedPkm.id}}.png" />
-      <!-- <a href="{{selectedPkm.url}}">Test</a> -->
-    </div>
-  <div class="pokedex" *ngFor="let pokemon of results" [class.selected]="pokemon === selectedPkm"
+      <a href="{{selectedPkm.url}}">Test</a>
+    </div> -->
+  <!-- <div class="pokedex" *ngFor="let pokemon of results" [class.selected]="pokemon === selectedPkm"
   (click)="onSelect(pokemon)">
     <div class="pokemon">
       {{pokemon.name}}
     </div>
-    <!--<a href="{{pokemon.url}}">+ Détails</a>-->
-  </div>
+    <a href="{{pokemon.url}}">+ Détails</a>
+  </div> -->
+
+  <ul uk-accordion>
+    <li class="uk-open pokedex col-md-4" *ngFor="let pokemon of results" [class.selected]="pokemon === selectedPkm"
+  (click)="onSelect(pokemon)">
+        <h3 class="uk-accordion-title">{{pokemon.name}}</h3>
+        <div class="uk-accordion-content">
+            <p>{{pokemon.name}}</p>
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.id}}.png" />
+        </div>
+    </li>
+  </ul>
 </div>
 
